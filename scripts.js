@@ -13,13 +13,28 @@ var bairro = document.getElementById("bairro");
 var cidade = document.getElementById("cidade");
 var estado = document.getElementById("estado");
 function alertar(){
+
+
     // alert("O nome inserido foi" + nome.value);
    
     const url =  `https://viacep.com.br/ws/${cep.value}/json/`;
+
  
     fetch(url)
-    .then(resposta=>resposta.json())
-    .then(dados=>alert(dados.logradouro))
+    .then(function(resposta){
+      return resposta.json();
+
+    })
+
+    .then(function(dados){
+    logradoruo.value = dados.logradoruo;
+    
+    })
+
+    .catch(function(e){
+        alert(e.message());
+        
+    })
  
  
      saida.innerText = "Nome:" + nome.value +
