@@ -17,6 +17,13 @@ function alertar(){
 
     // alert("O nome inserido foi" + nome.value);
    
+    if(cep.value.length < 8  ){
+      alert("CEP inválido!");
+      return;
+    }
+    
+    cep.value = cep.value.replace('-','')
+
     const url =  `https://viacep.com.br/ws/${cep.value}/json/`;
 
  
