@@ -28,12 +28,16 @@ function alertar(){
 
     .then(function(dados){
     logradoruo.value = dados.logradoruo;
+    complemento.value = dados.complemento;
+    bairro.value = dados.bairro;
+    cidade.value = dados.cidade;
+    estado.value = dados.estado;
     
     })
 
     .catch(function(e){
         alert(e.message());
-        
+
     })
  
  
